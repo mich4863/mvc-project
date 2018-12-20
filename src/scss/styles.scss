@@ -23,12 +23,14 @@ img {
 }
 
 .card {
-    background-color: black;   
+    background-color: black;
+    min-height: 500px;   
 }
 
 .card .card-title {
     font-weight: 500;
 }
+
 #sec {
     padding: 5px;
     padding-top: 30px;

@@ -6,8 +6,11 @@ import 'babel-polyfill'
 
 /*---- Load favorite movies ----*/
 import FavoriteController from './js/controller/favoriteController.js';
-let er = new FavoriteController();
-er.createFavoriteMovie();
+new FavoriteController().setupView();
+
+import FavoriteView from './js/view/favoriteView.js';
+
+new FavoriteView().populateWithMovies();
 
 
 
