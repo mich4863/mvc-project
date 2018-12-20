@@ -5,12 +5,15 @@ import 'babel-polyfill'
 // Import JS files
 
 /*---- Load favorite movies ----*/
-import FavoriteController from './js/controller/favoriteController.js';
-new FavoriteController().setupView();
+import App from './js/App';
+new App();
 
-import FavoriteView from './js/view/favoriteView.js';
+//import FavoriteController from './js/controller/favoriteController.js';
+//new FavoriteController().setupView();
 
-new FavoriteView().populateWithMovies();
+//import FavoriteView from './js/view/favoriteView.js';
+
+//new FavoriteView().populateWithMovies();
 
 
 

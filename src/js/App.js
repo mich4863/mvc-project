@@ -1,39 +1,27 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+import FavoriteController from './controller/favoriteController';
+import {store} from './model/store';
 
-    <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>    
-  </head>
+export default class App {
+    constructor() {
 
-  <body>
-    <!-- Header -->
-    <!--<div class="container">
-      <header>
-          <h1>Personal Movie DB</h1>     
-      </header>  
-    </div>-->
-
-      <!-- Favorite Movies -->
-      <!--<div class="container">
-        <h2>Favorite Movies</h2>
-      </div>-->
-
-      <!--<main>       
-        <section class="col">  
-          <div class="grey darken-4" id="sec">
-            <div class="container">
-              <div class="row" id="favoriteSection">
-              </div>
-            </div>
+        /*-- HEADER --*/
+        const headerHTML = `
+          <!-- Header -->
+          <div class="container">
+            <header>
+              <h1>Personal Movie DB</h1>     
+            </header>  
           </div>
-        </section>-->
-        
+        `
+        document.body.insertAdjacentHTML('beforeend', headerHTML);
 
+        /*-- FAVORITE SECTION --*/
+        new FavoriteController().setupView();
+
+        /*-- ALL MOVIES SECTION --*/
+        const allMoviesHTML = `
         <!-- All Movies -->
-        <!--<div class="container">
+        <div class="container">
         <section class="col">
           <h2>All Movies</h2>
           <div class="row">
@@ -117,16 +105,26 @@
                 </div>
               </div>
             </article>
+        `
+        document.body.insertAdjacentHTML('beforeend', allMoviesHTML);
 
+        /*-- FOOTER --*/
+        const footerHTML = `
+                </div>
+              </section>
+            </main>
+
+            <!-- Footer -->
+            <footer>
+              <p class="center-align">Personal Movie DB - c 2018 ligebanan</p>
+            </footer>
           </div>
-        </section>
-      </main>-->
+        `
+        document.body.insertAdjacentHTML('beforeend', footerHTML);
 
-      <!-- Footer -->
-      <!--<footer>
-        <p class="center-align">Personal Movie DB - c 2018 ligebanan</p>
-      </footer>
-    </div>-->
-
-  </body>
-</html>
+        /*-- Saves to localStorage, when the window is unloaded. --*/
+        window.addEventListener('beforeunload', (e) => store.saveToLocalStore());
+    }
+}
+/*-- Starts new app instance, when document is loaded. --*/
+//document.addEventListener('DOMContentLoaded', (e) => new App());
