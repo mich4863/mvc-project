@@ -37,6 +37,16 @@ img {
     padding-top: 30px;
 }
 
+.favorite-movie-button {
+    background: black;
+    cursor: pointer;
+    margin-top: 10px;
+    padding: 5px;
+}
+
+.favorite-movie-button:hover {
+    background-color: rgb(10, 10, 10);
+}
 
 
 
