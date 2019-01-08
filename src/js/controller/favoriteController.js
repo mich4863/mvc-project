@@ -1,45 +1,23 @@
+import { store } from '../model/store';
 import FavoriteView from '../view/favoriteView';
 
-export default class FavoriteController {
-
-    /*setupView() {
-      let HTMLelement = document.getElementById('favoriteSection');
-      let movieCardHTML = new FavoriteView().populateWithMovies();
-      
-      HTMLelement.insertAdjacentHTML('beforeend', movieCardHTML);
-    }*/
-    
-    setupView() {
-      let movieCardHTML = new FavoriteView().populateWithMovies();
-
-      const favoriteHTML = `
-        <!-- Favorite Movies -->
-        <div class="container">
-          <h2>Favorite Movies</h2>
-        </div>
-
-        <main>       
-          <section class="col">  
-            <div class="grey darken-4" id="sec">
-              <div class="container">
-                <div class="row" id="favoriteSection">
-                  ${movieCardHTML}
-                </div>
-              </div>
-            </div>
-          </section>
-      `
+    export default function setupFavoriteView() 
+    {
+      const favoriteHTML = FavoriteView(store);
       document.body.insertAdjacentHTML('beforeend', favoriteHTML);
-    }
+     
+      /*const favoriteSection = document.getElementById('favoriteSection');
 
-      /*for(let i = 0; i < testMovies.length; i++)
-      {
-        let favMovie = new Movie(testMovies[i]);
+      favoriteSection.addEventListener('click', (event) => {
+        const clickedElement = event.target;
 
-        if(favMovie.type === "fav")
+        if(clickedElement.matches('a.favorite-movie-button')) 
         {
-          let favMovieCard = new MovieCardComponent(favMovie);
-          document.getElementById('favMovies').insertAdjacentHTML('beforeend', favMovieCard.render(favMovie));  
+          console.log(clickedElement.dataset);
+
+          const movieID = clickedElement.getAttribute('data-id');
+          clickedElement.closest('article').remove();
+          console.log(`Removed movie with imdbID ${movieID} from favorite section`)
         }
-      }*/        
-}
+      })*/
+    }        

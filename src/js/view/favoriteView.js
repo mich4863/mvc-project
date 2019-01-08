@@ -1,15 +1,34 @@
 import MovieCardComponent from './movieCardComponent';
-import {store} from '../model/store';
 
-export default class FavoriteView 
+export default function FavoriteView(store) 
 {
-    populateWithMovies() 
-    {
-        let movieString = '';
-        console.log(store);
+    let movieCardHTML = '';
+
+    if(store) {
         store.forEach(movie => {
-            movieString += new MovieCardComponent(movie).render()
-        })
-        return movieString
+          movieCardHTML += new MovieCardComponent(movie).render()
+      })
     }
+    
+    return `
+      <!-- Favorite Movies -->
+      <div class="container">
+        <h2>Favorite Movies</h2>
+      </div>
+
+      <main>       
+        <section class="col">  
+          <div class="grey darken-4" id="sec">
+            <div class="container">
+              <div class="row" id="favoriteSection">
+                ${movieCardHTML}
+              </div>
+            </div>
+          </div>
+        </section>
+    `
+}
+
+export function addMovieToView(movie) {
+    return movieCardHTML = new MovieCardComponent(movie).render();
 }
