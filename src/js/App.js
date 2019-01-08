@@ -1,4 +1,4 @@
-import setupFavoriteView from './controller/favoriteController';
+import setupFavoriteView, { removeMovie } from './controller/favoriteController';
 
 class App {
     constructor() {
@@ -19,6 +19,7 @@ class App {
 
         /*-- FAVORITE SECTION --*/
         setupFavoriteView();
+        removeMovie();
 
         /*-- FOOTER --*/
         const footerHTML = `
@@ -35,7 +36,7 @@ class App {
         document.body.insertAdjacentHTML('beforeend', footerHTML);
 
         /*-- Saves to localStorage, when the window is unloaded. --*/
-        //window.addEventListener('beforeunload', (e) => store.saveToLocalStore());
+        window.addEventListener('beforeunload', (e) => store.saveToLocalStore());
     }
 }
 

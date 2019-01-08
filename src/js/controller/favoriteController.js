@@ -5,8 +5,11 @@ import FavoriteView from '../view/favoriteView';
     {
       const favoriteHTML = FavoriteView(store);
       document.body.insertAdjacentHTML('beforeend', favoriteHTML);
-     
-      /*const favoriteSection = document.getElementById('favoriteSection');
+    }
+    
+    export function removeMovie() 
+    {
+      const favoriteSection = document.getElementById('favoriteSection');
 
       favoriteSection.addEventListener('click', (event) => {
         const clickedElement = event.target;
@@ -19,5 +22,5 @@ import FavoriteView from '../view/favoriteView';
           clickedElement.closest('article').remove();
           console.log(`Removed movie with imdbID ${movieID} from favorite section`)
         }
-      })*/
-    }        
+      })
+    }

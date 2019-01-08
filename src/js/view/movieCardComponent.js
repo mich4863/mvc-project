@@ -18,7 +18,7 @@ export default class MovieCardComponent {
                 <div class="card-content">         
                   <span class="card-title activator white-text text-darken-4"><i class="material-icons right">arrow_upward</i>${this.title}</span>
                   <p>Year: ${this.year}<br>Genre: ${this.genre}</p>
-                  <p><a type="button" class="favorite-movie-button bottom" data-id="${this.id}">Add to Favorites</a></p>
+                  <p><a type="button" class="favorite-movie-button bottom" data-id="${this.id}">Remove Favorite</a></p>
                 </div>
                 <div class="card-reveal black">
                   <span class="card-title white-text text-darken-4">${this.title}<i class="material-icons right">close</i></span>
@@ -26,5 +26,5 @@ export default class MovieCardComponent {
                 </div>
               </div>
             </article>`
-  }
+  } 
 }
