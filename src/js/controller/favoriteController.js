@@ -16,11 +16,8 @@ import FavoriteView from '../view/favoriteView';
 
         if(clickedElement.matches('a.favorite-movie-button')) 
         {
-          console.log(clickedElement.dataset);
-
           const movieID = clickedElement.getAttribute('data-id');
           clickedElement.closest('article').remove();
-          console.log(`Removed movie with imdbID ${movieID} from favorite section`)
         }
       })
     }
