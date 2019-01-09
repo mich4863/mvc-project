@@ -1,4 +1,5 @@
 import setupFavoriteView, { removeMovie } from './controller/favoriteController';
+import setupSearch from './controller/SearchController';
 
 class App {
     constructor() {
@@ -15,7 +16,7 @@ class App {
         document.body.insertAdjacentHTML('beforeend', headerHTML);
 
         /*-- SEARCH SECTION --*/ 
-
+        setupSearch();
 
         /*-- FAVORITE SECTION --*/
         setupFavoriteView();
