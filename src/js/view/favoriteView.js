@@ -6,10 +6,10 @@ export default function FavoriteView(store)
 
     if(store) {
       const movies = Object.values(store.movieDB)
-        movies.forEach(movie => {
-          console.log(movie);
+        movies.forEach(movie => {     
           movieCardHTML += new MovieCardComponent(movie).render()
-      })
+          console.log(movie);
+      })  
     }
     
     return `

@@ -18,6 +18,7 @@ import FavoriteView from '../view/favoriteView';
         {
           const movieID = clickedElement.getAttribute('data-id');
           clickedElement.closest('article').remove();
+          store.removeFromLocalStore(movieID);
         }
       })
     }
