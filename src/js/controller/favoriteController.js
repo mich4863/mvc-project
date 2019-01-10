@@ -1,5 +1,5 @@
 import { store } from '../model/store';
-import FavoriteView from '../view/favoriteView';
+import  FavoriteView, { addMovieToView } from '../view/favoriteView';
 
     export default function setupFavoriteView() 
     {
@@ -22,3 +22,12 @@ import FavoriteView from '../view/favoriteView';
         }
       })
     }
+
+    /*export function addMovie(movie) {
+      const favoriteSection = document.getElementById('favoriteSection');
+      const movieCardHTML = addMovieToView(movie);
+
+      favoriteSection.insertAdjacentHTML('beforeend', movieCardHTML);
+
+      store.addToStore();
+    }*/

@@ -16,9 +16,9 @@ class Store
       }
     }
 
-    addToStore() 
+    addToStore(movie) 
     {
-
+      this.movieDB[movie.imdbID] = movie;
     }
 
     loadFromLocalStore() 

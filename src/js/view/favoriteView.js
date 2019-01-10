@@ -32,5 +32,9 @@ export default function FavoriteView(store)
 }
 
 export function addMovieToView(movie) {
-    return movieCardHTML = new MovieCardComponent(movie).render();
+  console.log(movie);
+  const ere = document.getElementById('favoriteSection')
+  ere.appendChild(new MovieCardComponent(movie).render())
+  
+  
 }

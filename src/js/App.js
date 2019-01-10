@@ -1,5 +1,5 @@
 import setupFavoriteView, { removeMovie } from './controller/favoriteController';
-import setupSearch from './controller/SearchController';
+import setupSearch, { searchInputCheck, addMovieToFavorite } from './controller/SearchController';
 
 class App {
     constructor() {
@@ -17,6 +17,8 @@ class App {
 
         /*-- SEARCH SECTION --*/ 
         setupSearch();
+        searchInputCheck();
+        addMovieToFavorite();
 
         /*-- FAVORITE SECTION --*/
         setupFavoriteView();
