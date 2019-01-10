@@ -23,11 +23,11 @@ import  FavoriteView, { addMovieToView } from '../view/favoriteView';
       })
     }
 
-    /*export function addMovie(movie) {
+    export function addMovie(movie) {
       const favoriteSection = document.getElementById('favoriteSection');
       const movieCardHTML = addMovieToView(movie);
 
       favoriteSection.insertAdjacentHTML('beforeend', movieCardHTML);
 
       store.addToStore();
-    }*/
+    }
