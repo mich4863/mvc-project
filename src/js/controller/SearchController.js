@@ -1,7 +1,6 @@
 import { searchBar, searchSection, searchResults } from '../view/SearchView';
 import { searchMovie, findMovie } from '../model/API';
-//import { addMovie } from './favoriteController';
-//import addMovie from './favoriteController';
+import { addMovieToStore } from './favoriteController';
 import { addMovieToView } from '../view/favoriteView';
 
 export default function setupSearch() {
@@ -44,13 +43,9 @@ export function addMovieToFavorite()
           const movieID = clickedElement.getAttribute('data-id');
           findMovie(movieID)
           .then(reponse => {
-              //addMovie(reponses.search)
               addMovieToView(reponse)
-              //console.log(reponse);
-            /*const erere = document.getElementById('favoriteSection')
-            const searchResul = searchResults(reponses.Search);*/
+              addMovieToStore(reponse)
           })
-          //console.log(movieID);
         }
       })
     }

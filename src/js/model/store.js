@@ -19,6 +19,7 @@ class Store
     addToStore(movie) 
     {
       this.movieDB[movie.imdbID] = movie;
+      this.saveToLocalStore();
     }
 
     loadFromLocalStore() 

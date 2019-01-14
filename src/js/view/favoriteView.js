@@ -33,8 +33,6 @@ export default function FavoriteView(store)
 
 export function addMovieToView(movie) {
   console.log(movie);
-  const ere = document.getElementById('favoriteSection')
-  ere.appendChild(new MovieCardComponent(movie).render())
-  
-  
+  const favSection = document.getElementById('favoriteSection')
+  favSection.insertAdjacentHTML('beforeend', new MovieCardComponent(movie).render());
 }
